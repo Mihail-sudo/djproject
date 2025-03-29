@@ -15,13 +15,14 @@ class Category(models.Model):
         verbose_name = 'Category'
         verbose_name_plural = 'Category'
 
+
 class Actor(models.Model):
     name = models.CharField('Name', max_length=100)
     age = models.PositiveSmallIntegerField('Age', default=0)
     description = models.TextField('Descriptioin')
     image = models.ImageField('Image', upload_to='actors/')
 
-    def __setattr__(self):
+    def __str__(self):
         return self.name
     
     def get_absolute_url(self):
@@ -87,7 +88,7 @@ class MovieShots(models.Model):
     
     class Meta:
         verbose_name = 'Shot from film'
-        verbose_neme_plural = 'Shots from film'
+        verbose_name_plural = 'Shots from film'
 
 
 class RatingStar(models.Model):
