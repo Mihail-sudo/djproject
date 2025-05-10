@@ -30,6 +30,7 @@
     <div class="row"> 
         <!-- Blog Entries Column --> 
         <div class="col-md-8 mt-3 left"> 
+            {% if user.is_authenticated %}
             {% for post in post_list %} 
             <div class="card mb-4"> 
                 <div class="card-body"> 
@@ -40,6 +41,7 @@
                 </div> 
             </div> 
             {% endfor %} 
+            {% endif %}
         </div> 
         {% block sidebar %} {% include 'sidebar.html' %} 
         {% endblock sidebar %} 
